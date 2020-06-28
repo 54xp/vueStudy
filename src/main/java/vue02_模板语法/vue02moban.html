@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板语法</title>
+</head>
+<body>
+<!--
+1.模板的理解：动态的html界面，包含了一些js语法代码
+            指令：以v- 开头的自定义标签属性
+2.双大括号表达式：语法 {{}}
+                功能：向页面输出数据
+-->
+<div id="app">
+    <h2>1.双大括号表达式</h2>
+    <p>{{msg}}</p>
+    <p>{{msg.toUpperCase()}}</p>
+    <h2>2.指令1：强制数据绑定</h2>
+    <h2>3.指令2：绑定事件监听</h2>
+</div>
+</body>
+<script src="../static/js/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data:{
+            msg: 'I Will Back'
+        }
+    })
+</script>
+</html>
