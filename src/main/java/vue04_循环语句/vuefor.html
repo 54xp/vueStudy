@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环语句</title>
+</head>
+<body>
+<div id="app">
+    <ol>
+        <li v-for="data in datas">
+            {{ data.name }}
+        </li>
+    </ol>
+</div>
+</body>
+<script src="../static/js/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            datas: [
+                { name: 'Runoob' },
+                { name: 'Google' },
+                { name: 'Taobao' }
+            ]
+        }
+    })
+</script>
+</html>
