@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>v_bind指令</title>
+</head>
+<style>
+    .class1{
+        background: #444;
+        color: #eee;
+    }
+</style>
+<body>
+<!--
+v-bind 指令被用来响应地更新 HTML 属性
+-->
+<div id="app">
+    <label for="r1">修改颜色</label>
+    <input type="checkbox" v-model="user" id="r1">
+    <br><br>
+    <div v-bind:class="{'class1':user}">
+        v-bind指令
+    </div>
+</div>
+========================================
+<div id="appUrl">
+    <pre><a v-bind:href="url">菜鸟教程</a></pre>
+</div>
+</body>
+<script src="../static/js/vue.js"></script>
+<script>
+   new Vue({
+        el:'#app',
+        data:{
+            user:false
+        }
+    })
+
+   new Vue({
+       el: '#appUrl',
+       data: {
+           url: 'http://www.runoob.com'
+       }
+   })
+</script>
+</html>

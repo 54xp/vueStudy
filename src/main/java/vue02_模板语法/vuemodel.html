@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>用户输入v-model</title>
+</head>
+<body>
+<!--
+v-model 指令用来在 input、select、textarea、checkbox、radio 等表单控件元素上
+创建双向数据绑定，根据表单上的值，自动更新绑定的元素的值。
+-->
+<div id="app">
+    <p>{{ message }}</p>
+    <input v-model="message">
+</div>
+============================================
+<div id="appModel">
+    <p>{{msg}}</p>
+    <div v-on:click="rever">反转字符串</div>
+</div>
+</body>
+<script src="../static/js/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Runoob!'
+        }
+    })
+
+    var appM = new Vue({
+        el: '#appModel',
+        data:{
+            msg:'runoob',
+        },
+        methods:{
+            rever:function () {
+                this.msg = this.msg.split('').reverse().join('')
+            }
+        }
+    })
+</script>
+</html>
