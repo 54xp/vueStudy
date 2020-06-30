@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>样式绑定</title>
+</head>
+<style>
+    .active {
+        width: 100px;
+        height: 100px;
+        background: green;
+    }
+    .text-danger {
+        background: red;
+    }
+</style>
+<body>
+<div id="app">
+    <div v-bind:class="{ active: isActive }"></div>
+</div>
+====================================================
+<div id="appArr">
+    <div class="static"
+         v-bind:class="{ active: isActive, 'text-danger': hasError }">
+    </div>
+</div>
+</body>
+<script src="../static/js/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            isActive:true
+        }
+    })
+
+    var vmArr = new Vue({
+        el:'#appArr',
+        data:{
+            isActive: true,
+            hasError: true
+        }
+    })
+</script>
+</html>
