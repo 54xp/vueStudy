@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>局部组件prop</title>
+</head>
+<body>
+<h4>prop 是子组件用来接受父组件传递过来的数据的一个自定义属性。</h4>
+<h4>父组件的数据需要通过 props 把数据传给子组件，子组件需要显式地用 props 选项声明 "prop"</h4>
+<h4>
+    动态 Prop
+    类似于用 v-bind 绑定 HTML 特性到一个表达式，也可以用 v-bind 动态绑定 props 的值到父组件的数据中。
+    每当父组件的数据变化时，该变化也会传导给子组件</h4>
+<div id="app">
+    <ol>
+        <todo-item v-for="item in sites" v-bind:todo="item"></todo-item>
+    </ol>
+</div>
+</body>
+<script src="../static/js/vue.js"></script>
+<script>
+    Vue.component('todo-item', {
+        props: ['todo'],
+        template: '<li>{{ todo.text }}</li>'
+    })
+    new Vue({
+        el: '#app',
+        data: {
+            sites: [
+                { text: 'Runoob' },
+                { text: 'Google' },
+                { text: 'Taobao' }
+            ]
+        }
+    })
+</script>
+</html>
